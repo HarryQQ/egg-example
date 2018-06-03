@@ -9,7 +9,8 @@ class UserController extends Controller {
     console.log('user', user)
     const userId = ctx.params.id;
     const userInfo = await ctx.service.user.find(userId);
-    ctx.body = userInfo;
+    const response =  {data:{...userInfo}, code: 200}
+    ctx.body = response;
   }
 }
 
